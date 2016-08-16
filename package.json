@@ -1,0 +1,27 @@
+{
+  "name": "ticktacktoe",
+  "version": "1.0.0",
+  "description": "ticktacktoe game written in javascript",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bogyo/ticktack.git"
+  },
+  "keywords": [
+    "ticktacktoe"
+  ],
+  "author": "bogyo|Katinka Orosz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bogyo/ticktack/issues"
+  },
+  "homepage": "https://github.com/bogyo/ticktack#readme",
+  "dependencies": {
+    "browserify": "^13.1.0",
+    "requirejs": "^2.2.0",
+    "watchify": "^3.7.0"
+  }
+}
