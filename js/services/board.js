@@ -1,5 +1,6 @@
-'use strict';
 define( [ '../utils/constant' ], function ( Constant ) {
+  'use strict';
+
   var board;
 
   function createBoard() {
@@ -42,15 +43,15 @@ define( [ '../utils/constant' ], function ( Constant ) {
     context.stroke();
 
     return canvas;
-  };
+  }
 
   function getMousePositionOnBoard( event ) {
     var rect = board.getBoundingClientRect();
     return {
       x: event.clientX - rect.left,
       y: event.clientY - rect.top
-    }
-  };
+    };
+  }
 
   board = createBoard();
 
@@ -58,5 +59,5 @@ define( [ '../utils/constant' ], function ( Constant ) {
     board: board,
     createBoard: createBoard,
     getMousePositionOnBoard: getMousePositionOnBoard
-  }
+  };
 } );

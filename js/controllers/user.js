@@ -1,16 +1,15 @@
-'use strict';
-
 define( [ '../services/drawer', '../services/score' ], function ( Drawer, Score ) {
-  function Player( number, section ) {
+  'use strict';
+
+  function UserPlayer( number ) {
     this.number = number;
-    this.section = section;
   }
 
-  Player.prototype.step = function ( coordinate ) {
+  UserPlayer.prototype.step = function ( coordinate ) {
     Drawer.drawX( coordinate );
     Score.updateScoreTable( coordinate, this.number );
-  }
+  };
 
-  return Player;
+  return UserPlayer;
 
 } );

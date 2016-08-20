@@ -1,20 +1,21 @@
-'use strict';
+define( [ '../utils/index', './drawer' ], function ( Utils, Drawer ) {
+  'use strict';
 
-define( [ '../utils/constant', '../utils/transform', './board', './drawer' ], function ( Constant, Transform, Board, Drawer ) {
-  var scoreTable;
-  var boardSize = Constant.boardSize;
+  var scoreTable,
+    Transform = Utils.Transform,
+    boardSize = Utils.Constant.boardSize;
 
   function setScoreTable( value ) {
     scoreTable = value;
-  };
+  }
 
   function getScoreTable() {
     return scoreTable;
-  };
+  }
 
   function checkForSavedGame() {
-    return JSON.parse( localStorage.getItem( "tickTackToeGame-Score" ) );
-  };
+    return JSON.parse( localStorage.getItem( 'tickTackToeGame-Score' ) );
+  }
 
   function initScoreTableFromSavedGame( savedScoreTable ) {
     var len = savedScoreTable.length,
@@ -36,7 +37,7 @@ define( [ '../utils/constant', '../utils/transform', './board', './drawer' ], fu
         }
       }
     }
-  };
+  }
 
   function deleteScoreTable() {
     localStorage.removeItem( 'tickTackToeGame-Score' );
@@ -64,21 +65,16 @@ define( [ '../utils/constant', '../utils/transform', './board', './drawer' ], fu
     }
 
     return setScoreTable( gameTable );
-  };
+  }
 
   function updateScoreTable( coordinate, player ) {
-    var scoreTable = getScoreTable();
-    var position = Transform.CoordinateToTableData( coordinate );
-    var step = JSON.parse( localStorage.getItem( "tickTackToeGame-Step" ) ) || 0;
+    var scoreTable = getScoreTable(),
+     position = Transform.CoordinateToTableData( coordinate ),
+     step = JSON.parse( localStorage.getItem( 'tickTackToeGame-Step' ) ) || 0;
 
     scoreTable[ position.x ][ position.y ] = player;
 
-    console.log( "STEP", step );
-    console.log( scoreTable );
-    console.log( "scoreTable recorded" )
-
     localStorage.setItem( 'tickTackToeGame-Step', JSON.stringify( step + 1 ) );
-
     localStorage.setItem( 'tickTackToeGame-Score', JSON.stringify( scoreTable ) );
   }
 
@@ -90,5 +86,5 @@ define( [ '../utils/constant', '../utils/transform', './board', './drawer' ], fu
     deleteScoreTable: deleteScoreTable,
     initScoreTable: initScoreTable,
     updateScoreTable: updateScoreTable
-  }
+  };
 } );

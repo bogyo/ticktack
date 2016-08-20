@@ -1,17 +1,16 @@
 define( function () {
-  var placeOfMessages = document.getElementById( 'message' );
-
+  'use strict';
+  
   function show( message ) {
     document.getElementById( 'message' ).innerHTML = message;
   }
 
-  function remove( message ) {
+  function remove( ) {
     document.getElementById( 'message' ).innerHTML = '';
   }
 
   return {
     show: show,
     remove: remove
-  }
-
+  };
 } );

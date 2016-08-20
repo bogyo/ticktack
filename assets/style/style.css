@@ -1,5 +1,12 @@
+/* reset */
+button {
+  border: none;
+  outline: none;
+}
+/* style */
 body {
   font-family: 'Arial', Sans-Serif;
+  font-size: 21px;
 }
 
 main {
@@ -13,11 +20,30 @@ main {
   margin: 0 auto;
 }
 
-#helper-box {
-  margin: 50px 0;
+#message {
+  color: #dc143c;
+  margin: 0 0 10px 0;
+  height: 30px;
 }
 
-#message {
-  color: #DC143C;
-  font-size: 21px;
+#newGameButton {
+    background: #fff;
+    padding: 10px 40px;
+    border-radius: 10px;
+    color: #777;
+    font-size: 19px;
+    border: 5px solid #ccc;
+    cursor: pointer;
+}
+
+#newGameButton:hover,
+#newGameButton:active {
+  background: #ccc;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  canvas {
+    width:100%;
+  }
 }

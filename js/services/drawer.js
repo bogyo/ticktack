@@ -1,4 +1,6 @@
 define( [ '../utils/constant', './board' ], function ( Constant, Board ) {
+  'use strict';
+
   var canvas = Board.board,
     sectionSize = Constant.sectionSize,
     context = canvas.getContext( '2d' );
@@ -41,5 +43,5 @@ define( [ '../utils/constant', './board' ], function ( Constant, Board ) {
   return {
     drawX: drawX,
     drawO: drawO
-  }
+  };
 } );
