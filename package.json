@@ -20,8 +20,7 @@
   },
   "homepage": "https://github.com/bogyo/ticktack#readme",
   "dependencies": {
-    "browserify": "^13.1.0",
-    "requirejs": "^2.2.0",
-    "watchify": "^3.7.0"
+    "requirejs": "^2.2.0"
+
   }
 }

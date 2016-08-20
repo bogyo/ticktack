@@ -1,9 +1,11 @@
 'use strict';
-define( function () {
-  var board = function createBoard() {
-    var boardSize = 3,
-      lineColor = '#ccc',
-      canvasSize = 500,
+define( [ '../utils/constant' ], function ( Constant ) {
+  var board;
+
+  function createBoard() {
+    var boardSize = Constant.boardSize,
+      lineColor = Constant.boardColor,
+      canvasSize = Constant.canvasSize,
       canvas, context, sectionSize, lineNumber;
 
     canvas = document.getElementById( 'board' );
@@ -40,9 +42,21 @@ define( function () {
     context.stroke();
 
     return canvas;
-  }();
+  };
+
+  function getMousePositionOnBoard( event ) {
+    var rect = board.getBoundingClientRect();
+    return {
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top
+    }
+  };
+
+  board = createBoard();
 
   return {
-    board: board
+    board: board,
+    createBoard: createBoard,
+    getMousePositionOnBoard: getMousePositionOnBoard
   }
 } );
