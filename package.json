@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "ticktacktoe game written in javascript",
   "main": "app.js",
-  "scripts": {
-    "test": "test"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bogyo/ticktack.git"
