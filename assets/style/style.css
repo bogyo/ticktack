@@ -23,7 +23,8 @@ main {
 #message {
   color: #dc143c;
   margin: 0 0 10px 0;
-  height: 30px;
+  height: 20px;
+  line-height: 20px;
 }
 
 #newGameButton {

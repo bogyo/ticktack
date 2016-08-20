@@ -15,51 +15,54 @@ define( [ '../services/board', '../services/drawer', '../services/score', '../ut
         if ( i === currentTable.length - 1 && currentTable[ i ][ j ] === this.number &&
           currentTable[ i - 1 ][ j ] === this.number && currentTable[ i - 2 ][ j ] === '' ) {
           return {
-            x: ( i - 2 ) * this.section + 10,
-            y: j * this.section + 10
+            x: ( i - 2 ) * this.section,
+            y: j * this.section
           };
         } else if ( i === currentTable.length - 1 && j === currentTable.length - 1 &&
           currentTable[ i ][ j ] === this.number && currentTable[ i - 1 ][ j - 1 ] === this.number &&
           currentTable[ i - 2 ][ j - 2 ] === '' ) {
           return {
-            x: ( i - 2 ) * this.section + 10,
-            y: ( j - 2 ) * this.section + 10
+            x: ( i - 2 ) * this.section,
+            y: ( j - 2 ) * this.section
           };
         } else if ( i === currentTable.length - 1 && j === 0 && currentTable[ i ][ j ] === this.number &&
           currentTable[ i - 1 ][ j + 1 ] === this.number &&
           currentTable[ i - 2 ][ j + 2 ] === '' ) {
           return {
-            x: ( i - 2 ) * this.section + 10,
-            y: ( j + 2 ) * this.section + 10
+            x: ( i - 2 ) * this.section,
+            y: ( j + 2 ) * this.section
           };
         } else if ( currentTable[ i ][ j ] === this.number &&
           currentTable[ i ][ j - 1 ] === this.number &&
           currentTable[ i ][ j - 2 ] === '' ) {
           return {
-            x: i * this.section + 10,
-            y: ( j - 2 ) * this.section + 10
+            x: i * this.section,
+            y: ( j - 2 ) * this.section
           };
         } else if ( i === currentTable.length - 1 && currentTable[ i ][ j ] === this.number && currentTable[ i - 1 ][ j ] === '' ) {
           return {
-            x: ( i - 1 ) * this.section + 10,
-            y: j * this.section + 10
+            x: ( i - 1 ) * this.section,
+            y: j * this.section
           };
         } else if ( currentTable[ i ][ j ] === this.number && currentTable[ i ][ j - 1 ] === '' ) {
           return {
-            x: i * this.section + 10,
-            y: ( j - 1 ) * this.section + 10
+            x: i * this.section,
+            y: ( j - 1 ) * this.section
           };
 
         } else if ( currentTable[ i ][ j ] === '' ) {
           return {
-            x: i * this.section + 10,
-            y: j * this.section + 10
+            x: i * this.section,
+            y: j * this.section
           };
         }
       }
     }
   };
 
+  //
+  // click trigger, ha ai a kezdojatekos
+  //
   AIPlayer.prototype.prepareStart = function ( starter ) {
     if ( starter === this.number ) {
       Board.board.click();

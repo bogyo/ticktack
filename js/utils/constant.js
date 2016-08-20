@@ -29,7 +29,7 @@ define( function () { ////TODO: refact
     notEmtySection: notEmtySection,
     oColor: OColor,
     xColor: xColor,
-    winnerMessage,
-    playerMessage
+    winnerMessage: winnerMessage,
+    playerMessage: playerMessage
   };
 } );

@@ -17,14 +17,10 @@
         ]
     },
     "globals": {
-        "chrome": true,
-        "describe": true,
-        "it": true,
-        "beforeEach": true,
         "define": true
     },
     "env": {
-        "es6": true,
+        "es6": false,
         "browser": true,
         "commonjs": true
     },

@@ -18,6 +18,8 @@
   "homepage": "https://github.com/bogyo/ticktack#readme",
   "dependencies": {
     "requirejs": "^2.2.0"
-
+  },
+  "devDependencies": {
+    "eslint": "^3.3.1"
   }
 }
