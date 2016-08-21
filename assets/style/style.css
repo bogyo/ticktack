@@ -45,6 +45,6 @@ main {
 
 @media (max-width: 768px) {
   canvas {
-    width:100%;
+    width:80%;
   }
 }
