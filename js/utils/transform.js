@@ -20,7 +20,7 @@ define( [ './constant' ], function ( Constant ) {
   }
 
   function PlayerNumberToSign( player ) {
-    return player === 2 ? 'O' : 'X';
+    return player === 2 ? 'O(AI)' : 'X';
   }
 
   return {

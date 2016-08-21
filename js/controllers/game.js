@@ -7,7 +7,7 @@ define( [ '../services/board', '../services/score', '../services/message', '../u
       Transform = Utils.Transform;
     //
     // tabla, storage torles, ujrainicializalas,
-    // elso jatekos kisorsoljuk
+    // elso jatekost kisorsoljuk
     //
 
     function startNewGame( ai ) {

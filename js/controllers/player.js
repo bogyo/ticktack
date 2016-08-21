@@ -1,5 +1,5 @@
-define( [ '../services/board', '../services/message', 'utils/index'],
-  function ( Board, Message, Utils) {
+define( [ '../services/board', '../services/message', 'utils/index' ],
+  function ( Board, Message, Utils ) {
     'use strict';
 
     var Constant = Utils.Constant,
@@ -38,7 +38,7 @@ define( [ '../services/board', '../services/message', 'utils/index'],
         ai.prepareStart( getPlayer() );
         Message.show( Transform.PlayerNumberToSign( getPlayer() ) + Constant.playerMessage.nextPlayer );
       } else {
-        first = Math.floor( Math.random() * ( 2 - 1 + 1 ) ) + 1; // ????? <1,2>
+        first = Math.floor( Math.random() * 2 ) + 1;
         setPlayer( first );
         localStorage.setItem( 'tickTackToeGame-Player', getPlayer() );
         Message.show( Transform.PlayerNumberToSign( getPlayer() ) + Constant.playerMessage.firstPlayer );
