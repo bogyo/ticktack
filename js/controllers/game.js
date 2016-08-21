@@ -30,9 +30,11 @@ define( [ '../services/board', '../services/score', '../services/message', '../u
     function play( e, userPlayer, aiPlayer ) {
       if ( IsWinner() === false && Player.getPlayer() === userPlayer.number ) {
         var coordinate = isReserved( Board.getMousePositionOnBoard( e ) );
-        userPlayer.step( coordinate );
-        Message.remove();
-        Player.changePlayer();
+        if ( coordinate ) {
+          userPlayer.step( coordinate );
+          Message.remove();
+          Player.changePlayer();
+        }
       }
       if ( IsWinner() === false && Player.getPlayer() === aiPlayer.number ) {
         aiPlayer.step();
@@ -70,7 +72,7 @@ define( [ '../services/board', '../services/score', '../services/message', '../u
     // ertesitsuk rola a usert
     //
 
-    function IsWinner(  ) {
+    function IsWinner() {
       var message = null;
 
       for ( var i = scoreTable.length - 1; i >= 0; i-- ) {
